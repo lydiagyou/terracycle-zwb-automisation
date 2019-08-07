@@ -3,6 +3,8 @@ import datetime
 import numpy as np
 import pandas as pd
 
+from CONSTANTS import *
+
 # functions
 def read_csv_file(filename):
     newname = pandas.read_csv(filename, header=0, sep=';')
@@ -104,6 +106,10 @@ def get_reseller_code(file, row):
 def get_product_details(file, row):
     row_after = row + 1
     item = file[row:row_after]['Product'][row]
+
+    # instead of all the else if statements, you can just use your dict from CONSTANTS
+    return ITEM_DICT[item]
+
     if item == "Zero waste box - Beauty Products (Med)":
         return ['ZWB - Beauty Products (Medium)', 893086008752, 170.97]
     elif item == 'Zero waste box - Beauty Products (Small)':
@@ -356,8 +362,7 @@ else:
 
         if k + 1 >= len(AP_myfile):
 
-            if ((
-                    k - new_startline) == 0):  # if the person which the code is going through has only ordered 1 type of box:
+            if ((k - new_startline) == 0):  # if the person which the code is going through has only ordered 1 type of box:
                 my_dataframe = create_all_cols_oneorder(AP_myfile, j)
                 export_csv = my_dataframe.to_csv(csv_name(j), index=None, header=True)
                 new_startline = k + 1  # update the startline
