@@ -1,6 +1,11 @@
 # terracycle-zwb-automisation
 Summary: This program automatically take an orders CSV from Australia Post or Officeworks and outputs a correctly formatted file to be imported into Zoho.
 
+## What's included:
+-sample input files
+-sample output files
+
+
 ## Things that need to be changed
 
 
