@@ -1,8 +1,8 @@
 """
 NOTES:
--Holidays code: https://stackoverflow.com/questions/9187215/datetime-python-next-business-day
--may have to install numpy, pandas, datetime, holidays on whatever computer
-
+-may have to install **pip, numpy, pandas, datetime, holidays on whatever computer
+-THE VIC LOCATION FOR OFFICEWORKS HASN'T CHANGED?? (just the street name is diff; but need to update the item dict and
+also the vic_shipping() function) (but also OW hasn't changed their own system lmao)
 """
 
 # import modules and files

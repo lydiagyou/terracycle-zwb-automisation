@@ -1,9 +1,9 @@
 """
-AU Post is weird because they put all the customer orders in one doc
 add in Reseller code?? -- which ones does ONLY AP do and which ones does ONLY the other ones do?
 output/print how many distinct orders there are
 -how to deal with Companyname?
-AP orders include time of the order -- need to shorten (no, because you just take the order date to be the current date)
+    -get rid of street 2?
+-do you want the order date to be today's date or to be the actual date that the customer placed the order
 """
 
 # import modules and files
@@ -39,7 +39,7 @@ def get_product_details(item):
 
 
 # code
-df = pd.read_csv("ap.csv")
+df = pd.read_csv("ap.csv", delimiter=';')
 
 # define the DataFrame that will be outputted
 output = pd.DataFrame(index=range(len(df.index)),
@@ -52,6 +52,7 @@ output = pd.DataFrame(index=range(len(df.index)),
                                "Item Channel", "Item Reference #", "Sales Order Level Tax", "Sales Order Level Tax %",
                                "Sales Order Level Tax Exemption Reason", "Is Discount Before Tax",
                                "Entity Discount Percent"])
+
 output.index.name = 'Index'
 
 
